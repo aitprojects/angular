@@ -1,0 +1,77 @@
+""""customer.component FILE""""
+import { Component, OnInit } from '@angular/core';
+import {UserServiceService} from '../services/user-service.service';
+
+@Component({
+  selector: 'app-customer',
+  templateUrl: './customer.component.html',
+  styleUrls: ['./customer.component.css']
+})
+export class CustomerComponent implements OnInit {
+
+  constructor('dad','dadd') {
+  
+
+   }
+
+  ngOnInit() {
+  }
+
+}
+"""""""""""""""""""user-service.service.ts FILE""""""
+import { Injectable } from '@angular/core';
+
+@Injectable()
+export class UserServiceService {
+
+  constructor(name:string,pas:string) {
+    return name,pas
+
+   }
+
+}
+""""""""""""app module FILE""""""""""
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppRoutingModule } from './app-routing.module';
+
+import { AppComponent } from './app.component';
+import { NgxEchartsModule } from 'ngx-echarts';
+import { EchartsjsComponent } from './echartsjs/echartsjs.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { UserDropdownComponent } from './navbar/user-dropdown/user-dropdown.component';
+import { UserMeesagesComponent } from './navbar/user-meesages/user-meesages.component';
+import { UserTeamComponent } from './navbar/user-team/user-team.component';
+import { ListInvoicesComponent } from './list-invoices/list-invoices.component';
+import { OfferdProductComponent } from './offerd-product/offerd-product.component';
+import { PricingAppComponent } from './pricing-app/pricing-app.component';
+import {UserServiceService} from './services/user-service.service'
+import {CustomerComponent} from './customer/customer.component'
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    EchartsjsComponent,
+    NavbarComponent,
+    SidebarComponent,
+    UserDropdownComponent,
+    UserMeesagesComponent,
+    UserTeamComponent,
+    ListInvoicesComponent,
+    OfferdProductComponent,
+    PricingAppComponent,
+    CustomerComponent,
+    UserServiceService
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+	  NgxEchartsModule
+  ],
+  providers: [UserServiceService],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+ 
